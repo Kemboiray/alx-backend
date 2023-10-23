@@ -45,7 +45,7 @@ class Server:
         """Return hypermedia dictionary"""
         data = self.get_page(page, page_size)
         _page_size = len(data)
-        _page = page if data else None
+        _page = page  # if data else None
         next_page = page + 1 if self.get_page(page + 1) else None
         prev_page = page - 1 or None
         dataset = []
