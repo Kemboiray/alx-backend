@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Basic dictionary"""
+"""Basic dictionary for caching"""
 
 from base_caching import BaseCaching
 from typing import Any
