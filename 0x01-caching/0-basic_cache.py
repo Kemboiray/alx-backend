@@ -6,6 +6,7 @@ from typing import Any
 
 
 class BasicCache(BaseCaching):
+    """Class modelling a basic caching system"""
     def put(self, key: Any, item: Any):
         """
         Assign to the dictionary `self.cache_data` the item `value` for the
