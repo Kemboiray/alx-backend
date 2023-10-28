@@ -13,7 +13,7 @@ class LRUCache(BaseCaching):
 
     def __init__(self):
         super().__init__()
-        self.tracker = list(self.cache_data.items())
+        self.tracker = list(self.cache_data.keys())
 
     def put(self, key: Any, item: Any):
         """
@@ -22,17 +22,17 @@ class LRUCache(BaseCaching):
         """
         if key and item:
             if len(self.cache_data) == self.MAX_ITEMS:
-                self.cache_data.pop(self.tracker[0][0])
-                lru = self.tracker.pop(0)[0]
+                self.cache_data.pop(self.tracker[0])
+                lru = self.tracker.pop(0)
                 if key != lru:
                     print("DISCARD:", lru)
             self.cache_data.update({key: item})
-            self.tracker.append((key, item))
+            self.tracker.append(key)
 
     def get(self, key: Any) -> Any:
         """Return the value in `self.cache_data` linked to `key`"""
         item = self.cache_data.get(key)
         if item:
-            mru = self.tracker.pop(self.tracker.index((key, item)))
+            mru = self.tracker.pop(self.tracker.index(key))
             self.tracker.append(mru)
         return item
