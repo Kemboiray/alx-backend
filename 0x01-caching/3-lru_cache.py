@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module defines a class `LRUCache` that implements LRU cache replacemen
+This module defines a class `LRUCache` that implements LRU cache replacement
 policy
 """
 
